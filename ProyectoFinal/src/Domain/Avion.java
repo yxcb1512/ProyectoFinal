@@ -9,5 +9,6 @@ package Domain;
  * @author almi0
  */
 public class Avion {
-    //Alexa
+    //Alexa 
+    int x;
 }
