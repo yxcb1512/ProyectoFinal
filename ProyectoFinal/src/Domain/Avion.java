@@ -11,5 +11,5 @@ package Domain;
 public class Avion {
     //Alexa 
     int x;
-    int y;
+    int y
 }
