@@ -1,32 +1,33 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Domain;
 
-
+/**
+ *
+ * @author almi0
+ */
 public class Avion {
-
-    private final String codigoVuelo;
-
+    
+    
     private final int CAPACIDAD_EJECUTIVA = 1;
     private final int CAPACIDAD_ECONOMICA = 3;
- 
+    
     private int asientosOcupadosEjecutiva;
     private int asientosOcupadosEconomica;
 
-    public Avion(String codigo) {
-    this.codigoVuelo = codigo;
-    this.asientosOcupadosEjecutiva = 0;
-    this.asientosOcupadosEconomica = 0;
+    public Avion() {
+       
+        this.asientosOcupadosEjecutiva = 0;
+        this.asientosOcupadosEconomica = 0;
     }
-
-    public String getCodigoVuelo() {
-        return this.codigoVuelo;
-    }
-
+    
     private int getAsientosDisponibles(String clase) {
         if (clase.equals("Ejecutiva")) {
-            return CAPACIDAD_EJECUTIVA - asientosOcupadosEjecutiva;
+            return CAPACIDAD_EJECUTIVA - asientosOcupadosEjecutiva; 
         } else if (clase.equals("Economica")) {
-            return CAPACIDAD_ECONOMICA - asientosOcupadosEconomica;
+            return CAPACIDAD_ECONOMICA - asientosOcupadosEconomica; 
         }
         return 0;
     }
@@ -39,27 +40,35 @@ public class Avion {
         return getAsientosDisponibles("Economica");
     }
 
+    
     public boolean reservarAsiento(String clase) {
 
         if (clase.equals("Ejecutiva")) {
-            if (getAsientosDisponibles(clase) > 0) {
-                asientosOcupadosEjecutiva++;
+            if (getDisponiblesEjecutiva() > 0) {
+                this.asientosOcupadosEjecutiva++; 
                 return true;
             }
-        } else if (clase.equals("Economica")) {
-            if (getAsientosDisponibles(clase) > 0) {
-                asientosOcupadosEconomica++;
+        } 
+        
+        else if (clase.equals("Economica")) {
+            if (getDisponiblesEconomica() > 0) {
+                this.asientosOcupadosEconomica++; 
                 return true;
             }
         }
-
+        
         return false;
     }
 
+    
     public void mostrarEstado() {
-    System.out.println("--- Vuelo " + codigoVuelo + " - Disponibilidad Actual ---");
-    System.out.println("Ejecutiva: " + getDisponiblesEjecutiva() + " disponibles (de " + CAPACIDAD_EJECUTIVA + ")");
-    System.out.println("Económica: " + getDisponiblesEconomica() + " disponibles (de " + CAPACIDAD_ECONOMICA + ")");
+        System.out.println("--- Disponibilidad del Avión ---");
+        
+        System.out.println("Ejecutiva: " + getDisponiblesEjecutiva() + 
+                           " disponibles / " + asientosOcupadosEjecutiva + " ocupados (Total: " + CAPACIDAD_EJECUTIVA + ").");
+                           
+        System.out.println("Económica: " + getDisponiblesEconomica() + 
+                           " disponibles / " + asientosOcupadosEconomica + " ocupados (Total: " + CAPACIDAD_ECONOMICA + ").");
     }
-
 }
+
