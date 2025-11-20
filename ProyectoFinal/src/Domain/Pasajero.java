@@ -9,11 +9,12 @@ package Domain;
  * @author josha
  */
 public class Pasajero {
+
     private String nombre;
-     private String identificacion;
+    private String identificacion;
     private String correo;
     private String telefono;
-    
+
     public Pasajero(String nombre, String identificacion, String correo, String telefono) {
         this.nombre = nombre;
         this.identificacion = identificacion;
@@ -56,6 +57,10 @@ public class Pasajero {
                "Identificación: " + identificacion + "\n" +
                "Correo: " + correo + "\n" +
                "Teléfono: " + telefono;
+    }
+
+    String getCedula() {
+      return identificacion;
     }
 
     }

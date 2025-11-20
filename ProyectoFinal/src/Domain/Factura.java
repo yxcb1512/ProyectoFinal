@@ -29,6 +29,44 @@ public class Factura {
         this.montoTotal = montoBase + montoIVA;
     }
 
+    public double getPORCENTAJE_IVA() {
+        return PORCENTAJE_IVA;
+    }
+
+    public String getNumeroFactura() {
+        return numeroFactura;
+    }
+
+    public String getNumeroTiquete() {
+        return numeroTiquete;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public String getCedulaCliente() {
+        return cedulaCliente;
+    }
+
+    public double getMontoBase() {
+        return montoBase;
+    }
+
+    public double getMontoIVA() {
+        return montoIVA;
+    }
+
+    public double getMontoTotal() {
+        return montoTotal;
+    }
+
+    public String getClaseAsiento() {
+        return claseAsiento;
+    }
+
+
+
     public void mostrarFactura() {
         DecimalFormat df = new DecimalFormat("#,##0.00");
 
