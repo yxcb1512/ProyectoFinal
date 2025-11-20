@@ -46,14 +46,15 @@ public class Reservacion {
     public String obtenerDisponibilidad(String origen, String destino) {
         String ruta = origen + "-" + destino;
 
-        if (!avionesPorRuta.containsKey(ruta)) {
-            return "Error. El destino y el origen no pueden ser el mismo lugar.";
-        }
+    // Si la ruta nunca ha sido usada, crea un avión nuevo
+    if (!avionesPorRuta.containsKey(ruta)) {
+        avionesPorRuta.put(ruta, new Avion());
+    }
 
-        Avion avion = avionesPorRuta.get(ruta);
+    Avion avionRuta = avionesPorRuta.get(ruta);
 
-        return "Ruta: " + ruta +
-                "\nEjecutiva disponible: " + avion.getDisponiblesEjecutiva() +
-                "\nEconómica disponible: " + avion.getDisponiblesEconomica();
+    return  "Ruta: " + ruta + "\n"
+            + "Ejecutiva disponibles: " + avionRuta.getDisponiblesEjecutiva() + "\n"
+            + "Económica disponibles: " + avionRuta.getDisponiblesEconomica() + "\n";
     }
 }

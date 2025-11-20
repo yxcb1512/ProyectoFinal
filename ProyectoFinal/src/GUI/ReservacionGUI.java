@@ -268,6 +268,10 @@ public class ReservacionGUI extends javax.swing.JFrame {
         String origen = cbOrigen.getSelectedItem().toString();
         String destino = cbDestino.getSelectedItem().toString();
 
+        if (origen.equals(destino)) {
+            txtSalida.setText("ERROR: El origen y el destino no pueden ser iguales.");
+            return;
+        }
         // Pide la disponibilidad específica para esa ruta
         String info = reservacion.obtenerDisponibilidad(origen, destino);
 
