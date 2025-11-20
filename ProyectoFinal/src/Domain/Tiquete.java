@@ -77,29 +77,28 @@ public class Tiquete {
 
     //   para mostrar la información del tiquete
     public void mostrarTiquete() {
-        System.out.println("===== TIQUETE AÉREO =====");
-        System.out.println("Codigo del tiquete: " + codigoTiquete);
-        System.out.println("Pasajero: " + pasajero.getNombre());
-        System.out.println("Vuelo: " + vuelo.getCodigoVuelo());
-        System.out.println("Origen: " + vuelo.getOrigen());
-        System.out.println("Destino: " + vuelo.getDestino());
-        System.out.println("Clase: " + clase);
-        System.out.println("Precio: ₡" + precio);
-        System.out.println("Fecha de emision: " + fechaEmision);
-        System.out.println("==========================");
+        System.out.println("===== TIQUETE AÉREO ====="
+                + "Codigo del tiquete: " + codigoTiquete
+                + "Pasajero: " + pasajero.getNombre()
+                + "Vuelo: " + vuelo.getCodigoVuelo()
+                + "Origen: " + vuelo.getOrigen()
+                + "Destino: " + vuelo.getDestino()
+                + "Clase: " + clase
+                + "Precio: ₡" + precio
+                + "Fecha de emision: " + fechaEmision
+                + "==========================");
     }
 
    
     @Override
     public String toString() {
-        return "Tiquete{" +
-                "codigoTiquete='" + codigoTiquete + '\'' +
-                ", pasajero=" + pasajero.getNombre() +
-                ", vuelo=" + vuelo.getCodigoVuelo() +
-                ", clase='" + clase + '\'' +
-                ", precio=" + precio +
-                ", fechaEmision='" + fechaEmision + '\'' +
-                '}';
+        return "Tiquete:" +"\n"+
+                "CodigoTiquete: " + codigoTiquete + '\'' +"\n"+
+                "Pasajero: " + pasajero.getNombre() +"\n"+
+                "Vuelo: " + vuelo.getCodigoVuelo() +"\n"+
+                "Clase: " + clase + '\'' +"\n"+
+                "Precio: " + precio +"\n"+
+                "Fecha de Emision: " + fechaEmision + '\'';
     }
     
 }
